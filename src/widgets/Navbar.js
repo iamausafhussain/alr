@@ -3,10 +3,11 @@ import "./Navbar.css";
 import Logo from "../assets/images/logo.png";
 import Box from "@mui/material/Box";
 import LinearProgress from "@mui/material/LinearProgress";
-import { Switch } from "@headlessui/react";
+import ThemeToggler from "./ThemeToggler";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 function Navbar() {
-	const [enabled, setEnabled] = useState(false);
+	const [loading, setLoading] = useState(true);
 
 	return (
 		<div>
@@ -15,36 +16,40 @@ function Navbar() {
 				<nav>
 					<ul className="nav__links">
 						<li>
-							<a href="#">Services</a>
-						</li>
-						<li>
-							<a href="#">Projects</a>
+							<a href="#">Home</a>
 						</li>
 						<li>
 							<a href="#">About</a>
 						</li>
+						<li>
+							<a href="#">Contacts</a>
+						</li>
+						<li>
+							<a href="#">Services</a>
+						</li>
+						<li>
+							<a href="#">Links</a>
+						</li>
+						<li>
+							<a href="#">Projects</a>
+						</li>
+						{/* <li>
+							<ThemeToggler />
+						</li> */}
 					</ul>
 				</nav>
 				<a className="cta" href="#">
-					<button>Contact</button>
+					<button>
+						<span className="login__button__text">Log In</span>
+						<ArrowOutwardIcon />
+					</button>
 				</a>
-				<Switch
-					checked={enabled}
-					onChange={setEnabled}
-					className={`${
-						enabled ? "bg-blue-600" : "bg-gray-200"
-					} relative inline-flex h-6 w-11 items-center rounded-full`}>
-					<span className="sr-only">Enable notifications</span>
-					<span
-						className={`${
-							enabled ? "translate-x-6" : "translate-x-1"
-						} inline-block h-4 w-4 transform rounded-full bg-white transition`}
-					/>
-				</Switch>
 			</header>
-			<Box sx={{ width: "100%" }}>
-				<LinearProgress color="info" />
-			</Box>
+			{loading && (
+				<Box sx={{ width: "100%" }}>
+					<LinearProgress color="inherit" />
+				</Box>
+			)}
 		</div>
 	);
 }

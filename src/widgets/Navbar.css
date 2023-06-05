@@ -3,7 +3,7 @@ header {
 	align-items: center;
 	justify-content: flex-end;
 	padding: 30px 10%;
-	background-color: #24252a;
+	background-color: #ffffff;
 	height: 20px;
 }
 
@@ -22,6 +22,7 @@ header {
 }
 
 .nav__links li a {
+	color: #1e1711;
 	transition: all 0.3s ease 0s;
 }
 
@@ -30,12 +31,19 @@ header {
 }
 
 button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	padding: 9px 25px;
-	background-color: rgba(0, 136, 169, 1);
+	background-color: #1e1711;
 	border: none;
 	border-radius: 50px;
 	cursor: pointer;
 	transition: all 0.3s ease 0s;
+}
+
+.login__button__text {
+	margin: 0 10px 0 0;
 }
 
 button:hover {
